@@ -5,6 +5,7 @@ export interface UserStats {
   patternRecognition: { played: number; correct: number; accuracy: number }
   tradeSimulation: { played: number; profitableTrades: number; totalPnL: number }
   taxSimulator: { completed: number; taxSaved: number }
+  supportResistance: { played: number; correct: number; accuracy: number }
 }
 
 export interface User {

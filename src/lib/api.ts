@@ -43,6 +43,10 @@ export const gamesApi = {
     api.get('/games/candle-challenge', { params: { difficulty } }),
   submitCandlePrediction: (data: { prediction: string; correctAnswer: string; difficulty: string; timeSpent: number }) =>
     api.post('/games/candle-challenge/submit', data),
+  getSupportResistanceChallenge: (difficulty?: string) =>
+    api.get('/games/support-resistance', { params: { difficulty } }),
+  submitSupportResistance: (data: { candles: any[]; drawnSupports: number[]; drawnResistances: number[]; difficulty: string; timeSpent: number }) =>
+    api.post('/games/support-resistance/submit', data),
   getTradeScenario: () => api.get('/games/trade-scenario'),
   submitTrade: (data: { entryPrice: number; stopLoss: number; targetPrice: number; direction: string }) =>
     api.post('/games/trade-scenario/submit', data),
