@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: 'Syne', system-ui;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-body: 'Inter', system-ui;
+  }
+  body {
+    background-color: #0a0d0f;
+    color: #e8f4fd;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0f1419; }
+  ::-webkit-scrollbar-thumb { background: #1e2d3d; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #00d084; }
+  ::selection { background: rgba(0, 208, 132, 0.2); color: #00d084; }
+}
+
+@layer components {
+  .card {
+    @apply bg-bg-card border border-bg-border rounded-xl shadow-card;
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 50%);
+  }
+  .btn-primary {
+    @apply bg-accent-green text-bg-primary font-semibold px-6 py-3 rounded-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed;
+    font-family: var(--font-display);
+  }
+  .btn-secondary {
+    @apply bg-transparent border border-bg-border text-text-secondary px-6 py-3 rounded-lg transition-all duration-200 hover:border-accent-green hover:text-text-primary active:scale-[0.98];
+    font-family: var(--font-display);
+  }
+  .btn-gold {
+    @apply bg-accent-gold text-bg-primary font-semibold px-6 py-3 rounded-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98];
+    font-family: var(--font-display);
+  }
+  .input-field {
+    @apply w-full bg-bg-secondary border border-bg-border rounded-lg px-4 py-3 text-text-primary placeholder-text-muted outline-none focus:border-accent-green transition-colors duration-200;
+    font-family: var(--font-mono);
+  }
+  .game-card {
+    @apply card cursor-pointer transition-all duration-300 hover:border-accent-green/40 hover:shadow-card-hover hover:-translate-y-1;
+  }
+  .label { @apply text-xs font-mono text-text-muted uppercase tracking-widest; }
+  .value-green { @apply text-accent-green font-mono font-semibold; }
+  .value-red { @apply text-accent-red font-mono font-semibold; }
+  .value-gold { @apply text-accent-gold font-mono font-semibold; }
+  .xp-bar { @apply w-full h-1.5 bg-bg-border rounded-full overflow-hidden; }
+  .xp-fill {
+    @apply h-full bg-accent-green rounded-full transition-all duration-700;
+    box-shadow: 0 0 8px rgba(0, 208, 132, 0.5);
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+  .font-mono { font-family: var(--font-mono); }
+  .text-gradient-green {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #00d084, #4dabf7);
+  }
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #f5c842, #ff9f43);
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #131920 25%, #1a2332 50%, #131920 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
