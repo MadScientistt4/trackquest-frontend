@@ -129,10 +129,10 @@ export default function DashboardPage() {
           {/* Stats Row */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
             {[
-              { label: 'Accuracy', value: `${user.stats.candlePrediction.accuracy}%`, icon: '🎯', color: 'text-accent-green' },
-              { label: 'Games Played', value: user.stats.candlePrediction.played + user.stats.tradeSimulation.played, icon: '🎮', color: 'text-accent-blue' },
-              { label: 'Profitable Trades', value: user.stats.tradeSimulation.profitableTrades, icon: '📈', color: 'text-accent-gold' },
-              { label: 'Tax Saved', value: `₹${(user.stats.taxSimulator.taxSaved || 0).toLocaleString('en-IN')}`, icon: '🧾', color: 'text-orange-400' },
+              { label: 'Accuracy', value: `${user.stats?.candlePrediction?.accuracy ?? 0}%`, icon: '🎯', color: 'text-accent-green' },
+              { label: 'Games Played', value: (user.stats?.candlePrediction?.played ?? 0) + (user.stats?.tradeSimulation?.played ?? 0), icon: '🎮', color: 'text-accent-blue' },
+              { label: 'Profitable Trades', value: user.stats?.tradeSimulation?.profitableTrades ?? 0, icon: '📈', color: 'text-accent-gold' },
+              { label: 'Tax Saved', value: `₹${(user.stats?.taxSimulator?.taxSaved ?? 0).toLocaleString('en-IN')}`, icon: '🧾', color: 'text-orange-400' },
             ].map(stat => (
               <div key={stat.label} className="card p-4">
                 <div className="text-xl mb-2">{stat.icon}</div>

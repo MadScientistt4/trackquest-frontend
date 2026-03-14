@@ -53,6 +53,18 @@ export const gamesApi = {
     api.get('/games/support-resistance-forex', { params: { difficulty, pairIndex } }),
   getForexPairs: () =>
     api.get('/games/forex-pairs'),
+  getStockChallenge: (ticker?: string, difficulty?: string) =>
+    api.get('/games/stock-challenge', { params: { ticker, difficulty } }),
+  submitStockPrediction: (data: { prediction: string; correctAnswer: string; ticker: string; difficulty: string; timeSpent: number }) =>
+    api.post('/games/stock-challenge/submit', data),
+  getAvailableStocks: () =>
+    api.get('/games/stocks'),
+  getCryptoChallenge: (symbol?: string, difficulty?: string) =>
+    api.get('/games/crypto-challenge', { params: { symbol, difficulty } }),
+  submitCryptoPrediction: (data: { prediction: string; correctAnswer: string; symbol: string; difficulty: string; timeSpent: number }) =>
+    api.post('/games/crypto-challenge/submit', data),
+  getAvailableCryptos: () =>
+    api.get('/games/cryptos'),
   getTradeScenario: () => api.get('/games/trade-scenario'),
   submitTrade: (data: { entryPrice: number; stopLoss: number; targetPrice: number; direction: string }) =>
     api.post('/games/trade-scenario/submit', data),

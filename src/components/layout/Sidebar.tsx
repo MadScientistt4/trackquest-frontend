@@ -8,6 +8,8 @@ const NAV_ITEMS = [
   { href: '/dashboard', icon: '⬡', label: 'Dashboard' },
   { href: '/games/candle-prediction', icon: '🕯️', label: 'Candle Prediction' },
   { href: '/games/candle-prediction-forex', icon: '💱', label: 'Forex Trading' },
+  { href: '/games/stock-prediction', icon: '📈', label: 'Stock Prediction' },
+  { href: '/games/crypto-prediction', icon: '🪙', label: 'Crypto Prediction' },
   { href: '/games/support-resistance', icon: '📊', label: 'Support/Resistance' },
   { href: '/games/pattern-recognition', icon: '🔍', label: 'Pattern Recognition' },
   { href: '/games/trade-simulation', icon: '⚖️', label: 'Trade Simulation' },

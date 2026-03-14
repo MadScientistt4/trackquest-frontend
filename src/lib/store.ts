@@ -6,6 +6,8 @@ export interface UserStats {
   tradeSimulation: { played: number; profitableTrades: number; totalPnL: number }
   taxSimulator: { completed: number; taxSaved: number }
   supportResistance: { played: number; correct: number; accuracy: number }
+  stockPrediction: { played: number; correct: number; accuracy: number }
+  cryptoPrediction: { played: number; correct: number; accuracy: number }
 }
 
 export interface User {
@@ -73,3 +75,5 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     }
   },
 }))
+
+export const useStore = useAuthStore
